@@ -1,18 +1,18 @@
 # BenchmarkPlayground
->Alguns exemplos interessantes de otimização de código.
+> Alguns exemplos interessantes de otimização de código.
 
 Supondo que estamos desenvolvendo uma API de alta performance com o seguinte requisito não funcional: **"Esta API precisa responder sempre abaixo de 30 milisegundos".**
 Neste cenário, cada nanosegundo conta, então vamos verificar os benchmarks de alguns métodos escritos com abordagens diferentes, mas que chegam ao mesmo resultado.
 
 O objetivo dos métodos testados é extrair, como int32, o ano de dentro de uma string que está no formato datetime iso. A string utilizada no exemplo é: "2021-04-15T00:20:53Z"
 
-##Resultados do benchmark.
+## Resultados do benchmark.
 ![](resultado-benchmark.png)
 
-###A implementação metodos testados está em:
+### A implementação metodos testados está em:
 BenchmarkPlayground/DateParser.cs
 
-##Minhas Conclusões
+## Minhas Conclusões
 
 - Ao observar a implementação do método mais performatico, fica claro que nem sempre clean code e high performance andam de mãos dadas. Neste cenário, o método mais legivel é o menos performático, e o mais performático ***(42x mais rápido)*** é o menos legível. É preciso sempre avaliar se o custo de performance vale o custo de manutenção de um código. Provavelmente um dev iniciante não vai entender de imediato o que está acontecendo no *UsingSpanAndManualConversion*().
 
